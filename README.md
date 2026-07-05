@@ -1,34 +1,44 @@
-# Churn Prediction Project (`churnpred`)
+# Churn Prediction Project (`customer-churn-prediction`)
 
 A machine learning project designed to predict customer churn. This project provides end-to-end pipelines from raw data ingestion and processing, to model training, evaluation, and serving via a web application.
 
 ## Project Structure
 
 ```
-churnpred/
+customer-churn-prediction/
 │
-├── data/               # Project data files
-│   ├── raw/            # Original, immutable data dump
-│   └── processed/      # Cleaned and processed data ready for modeling
+├── app/                  # Web application code (e.g., FastAPI, Streamlit, Flask)
 │
-├── notebooks/          # Jupyter notebooks for EDA and prototyping
+├── data/                 # Project data files
+│   ├── raw/              # Original, immutable data dump
+│   └── processed/        # Cleaned and processed data ready for modeling
 │
-├── src/                # Source code for data pipelines, models, utilities
+├── models/               # Trained and serialized model binaries (e.g., .pkl, .joblib)
 │
-├── models/             # Trained and serialized model binaries (e.g., .pkl, .h5)
+├── notebooks/            # Jupyter notebooks for EDA and prototyping
+│   ├── 01_data_understanding.ipynb
+│   ├── 02_data_cleaning.ipynb
+│   ├── 03_eda.ipynb
+│   ├── 04_feature_engineering.ipynb
+│   └── 05_modeling.ipynb
 │
-├── reports/            # Generated analysis reports (HTML, PDF, figures)
+├── reports/              # Generated analysis reports (HTML, PDF, figures)
 │
-├── app/                # Web application code (e.g., FastAPI, Streamlit, Flask)
+├── src/                  # Source code for data pipelines, models, utilities
+│   ├── data_loader.py
+│   ├── data_cleaning.py
+│   ├── feature_engineering.py
+│   ├── preprocessing.py
+│   ├── train.py
+│   ├── evaluate.py
+│   ├── predict.py
+│   └── utils.py
 │
-├── tests/              # Unit and integration tests
+├── tests/                # Unit and integration tests
 │
-├── docs/               # Project documentation (Sphinx, Markdown, etc.)
-│
-├── requirements.txt    # Project dependencies
-├── README.md           # Project summary and documentation
-├── .gitignore          # File type ignoring rules
-└── LICENSE             # MIT License
+├── README.md             # Project summary and documentation
+├── requirements.txt      # Project dependencies
+└── .gitignore            # File type ignoring rules
 ```
 
 ## Getting Started
@@ -48,10 +58,6 @@ pip install -r requirements.txt
 ```
 
 ### 3. Usage
-- **Data Processing**: Preprocess raw data by running modules within the `src/` directory.
-- **Model Training**: Train models and save the serialized binaries to `models/`.
-- **Evaluation**: Run Jupyter notebooks in `notebooks/` to inspect performance or check generated plots in `reports/`.
-- **Web App**: Run the application located in `app/`.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- **Notebooks**: Run the Jupyter Notebooks in the `notebooks/` directory sequentially from `01` to `05` for EDA, feature engineering, and model exploration.
+- **Source Pipelines**: Run script modules in `src/` to execute data ingestion, preprocessing, training, or prediction pipelines.
+- **Web App**: Run the web API application in `app/`.
