@@ -1,63 +1,61 @@
-# Churn Prediction Project (`customer-churn-prediction`)
+# Customer Churn Prediction
 
-A machine learning project designed to predict customer churn. This project provides end-to-end pipelines from raw data ingestion and processing, to model training, evaluation, and serving via a web application.
+## Overview
 
-## Project Structure
+An end-to-end Machine Learning project that predicts whether a telecom customer is likely to churn.
 
-```
-customer-churn-prediction/
-│
-├── app/                  # Web application code (e.g., FastAPI, Streamlit, Flask)
-│
-├── data/                 # Project data files
-│   ├── raw/              # Original, immutable data dump
-│   └── processed/        # Cleaned and processed data ready for modeling
-│
-├── models/               # Trained and serialized model binaries (e.g., .pkl, .joblib)
-│
-├── notebooks/            # Jupyter notebooks for EDA and prototyping
-│   ├── 01_data_understanding.ipynb
-│   ├── 02_data_cleaning.ipynb
-│   ├── 03_eda.ipynb
-│   ├── 04_feature_engineering.ipynb
-│   └── 05_modeling.ipynb
-│
-├── reports/              # Generated analysis reports (HTML, PDF, figures)
-│
-├── src/                  # Source code for data pipelines, models, utilities
-│   ├── data_loader.py
-│   ├── data_cleaning.py
-│   ├── feature_engineering.py
-│   ├── preprocessing.py
-│   ├── train.py
-│   ├── evaluate.py
-│   ├── predict.py
-│   └── utils.py
-│
-├── tests/                # Unit and integration tests
-│
-├── README.md             # Project summary and documentation
-├── requirements.txt      # Project dependencies
-└── .gitignore            # File type ignoring rules
-```
+The project follows a production-oriented workflow including:
 
-## Getting Started
+- Data Understanding
+- Data Cleaning
+- Exploratory Data Analysis
+- Feature Engineering
+- Model Training
+- Model Evaluation
+- Model Deployment
 
-### 1. Prerequisites
-- Python 3.8 or higher
-- Git
+---
 
-### 2. Setup
-Clone this repository and set up a virtual environment:
-```bash
-git clone <repository-url>
-cd churnpred
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
+## Business Problem
 
-### 3. Usage
-- **Notebooks**: Run the Jupyter Notebooks in the `notebooks/` directory sequentially from `01` to `05` for EDA, feature engineering, and model exploration.
-- **Source Pipelines**: Run script modules in `src/` to execute data ingestion, preprocessing, training, or prediction pipelines.
-- **Web App**: Run the web API application in `app/`.
+Telecommunication companies lose revenue when customers discontinue their services.
+
+The objective of this project is to predict customers who are likely to churn so the company can take preventive actions.
+
+---
+
+## Dataset
+
+- IBM Telco Customer Churn Dataset
+- 7043 customers
+- 21 features
+- Binary classification problem
+
+Target Variable:
+
+Churn
+- Yes
+- No
+---
+
+## Development Roadmap
+
+- [x] Phase 1 - Data Understanding
+- [ ] Phase 2 - Data Cleaning
+- [ ] Phase 3 - Exploratory Data Analysis
+- [ ] Phase 4 - Feature Engineering
+- [ ] Phase 5 - Data Preprocessing
+- [ ] Phase 6 - Model Training
+- [ ] Phase 7 - Model Evaluation
+- [ ] Phase 8 - Streamlit Deployment
+
+---
+
+## Tech Stack
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Scikit-learn
+- Streamlit
